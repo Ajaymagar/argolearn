@@ -12,6 +12,14 @@ app.get('/',(req , res)=>{
     
 })
 
+app.get('/api',(req , res)=>{
+
+    res.send({
+        "Meassage":"Api Working Fine"
+    })
+
+})
+
 app.use(express.urlencoded({ extended:true  }))
 
 app.listen(3000, ()=>{
