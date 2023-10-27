@@ -48,7 +48,7 @@ jobs:
                 git config --global user.name "Ajaymagar"
                 echo ${{github.sha}}
                 sed -i "s|image: ajaymagar/argoapp:.*|image: ajaymagar/argoapp:${{ github.sha }}|g" deploy/deployment.yaml
-                git add deployment.yaml
+                git add .
                 git commit -am "Update image for -${{ github.sha }}"
             - run: echo ${{ github }}
             - run: git push origin master
