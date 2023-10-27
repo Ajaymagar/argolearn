@@ -46,7 +46,7 @@ jobs:
             git config --global user.email "ajaymagar4818@gmail.com"
             git config --global user.name "Ajaymagar"
             echo ${{github.sha}}
-            sed -i "s#${{ github.actor }}.*#${{ github.actor }}/ajaymagar:${{ github.sha  }}#g" deploy/deployment.yaml
+            sed -i "s#${{ github.actor }}.*#${{ github.actor }}/ajaymagar:${{ github.sha  }}#g" deployment.yaml
             git add .
             git commit -am "Update image for -${{ github.sha }}"
         - run: echo ${{ github }}
