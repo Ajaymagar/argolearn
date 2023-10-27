@@ -38,7 +38,7 @@ jobs:
         - uses: actions/checkout@v3
           with:
             respository : Ajaymagar/argolearn
-            ref: master
+            ref: 'master'
             token: ${{ secrets.G_TOKEN }}
         - name: setup git config
           run: |
@@ -46,7 +46,6 @@ jobs:
             git config --global user.name "Ajaymagar"
             echo ${{github.sha}}
             sed -i "s|image: ajaymagar/argoapp:.*|image: ajaymagar/argoapp:${{ github.sha }}|g" deployment.yaml
-            git add -A
-            git commit -am "Update image for -${{ github.sha }}"
-        - run: echo ${{ github }}
-        - run: git push origin master
+            git add deployment.yaml
+            git commit -m "Update image for - ${{ github.sha }}"
+            git push
