@@ -4,7 +4,7 @@ on:
     branches:
       - master
     paths-ignore:
-      - './deploy/deployment.yaml'
+      - 'deploy/deployment.yaml'
 
 jobs:
     push_to_registry:
