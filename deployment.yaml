@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: ajaymagar/argoapp:e2ec3172152dd9468289d0f420a88dbf5056e900
+        image: ajaymagar/argoapp:d9cbaf0ab80e3af65b9f10b5d0b19d13075bd141
         ports:
         - containerPort: 3000
