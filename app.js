@@ -15,7 +15,7 @@ app.get('/',(req , res)=>{
 app.get('/api',(req , res)=>{
 
     res.send({
-        "Meassage":"Api Working fine"
+        "Meassage":"Api Working fine dd"
     })
 
 })
