@@ -4,7 +4,7 @@ on:
     branches:
       - master
     paths-ignore:
-      - 'deployment.yaml'
+      - './deploy/deployment.yaml'
 
 jobs:
     push_to_registry:
@@ -47,7 +47,7 @@ jobs:
                 git config --global user.email "ajaymagar4818@gmail.com"
                 git config --global user.name "Ajaymagar"
                 echo ${{github.sha}}
-                sed -i "s|image: ajaymagar/argoapp:.*|image: ajaymagar/argoapp:${{ github.sha }}|g" deployment.yaml
+                sed -i "s|image: ajaymagar/argoapp:.*|image: ajaymagar/argoapp:${{ github.sha }}|g" ./deploy/deployment.yaml
                 git add deployment.yaml
                 git commit -am "Update image for -${{ github.sha }}"
             - run: echo ${{ github }}
